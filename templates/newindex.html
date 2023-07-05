@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VSOS</title>
+    <!-- <link rel="stylesheet" href="newstyle.css"> -->
+    <style>
+                
+        @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+        *{
+            margin: 0%
+        }
+
+        .upperblock{
+            width: 100vw;
+            height: 10vh;
+            display: flex;
+            background-color: rgb(243, 51, 188);
+            font-family: 'Pacifico', cursive;
+            padding-left: 2%;
+            padding-top: 1%;
+        }
+
+        .image{
+            border-radius: 50%;
+            height: fit-content;
+        }
+        .container1{
+            /* background-color: ; */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            /* padding-top: 12%;
+            padding-left: 10%; */
+            width: 100vw;
+            height: 100vh;
+        }
+
+        #heading1{
+            font-size: 700%;
+            margin: 0;
+
+        }
+
+        #heading{
+            font-size: 400%;
+            margin: 0%;
+        }
+        .containerleft{
+            /* font-size: 400%; */
+            /* margin: 0%; */
+            font-family: 'Bebas Neue', cursive;
+            padding-top: 5%;
+        }
+
+        .buttonclass{
+            padding-top: 1%;
+        }
+
+        .button{
+            border: none;
+            border-style: solid;
+            width: 300px;
+            height: 50px;
+            font-family: 'Bebas Neue', cursive;
+            
+            font-size: large;
+
+        }
+        .button:hover{
+            background-color: rgb(243, 51, 188);
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="upperblock">
+        <img src="../static/busicon1.png" alt="Bus_Image" class="image">
+    </div>
+    <div class="container1">
+        <div class="containerleft">
+            <p id="heading">Welcome <br>To</p>
+            <p id="heading1">Vehicle Seat Occupancy System</p>
+        </div>
+        <div class="buttonclass">
+            <a href="{{url_for('displayBusDetails')}}"><input type="button" value="Check Bus Status" class="button"></a>
+        </div>
+    </div>
+</body>
+</html>
