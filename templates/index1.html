@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1 , h2 , h3{
+            font-family: 'Franklin Gothic Medium';
+            font-size:large;
+        }
+        #box{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width:100vw;
+            height: 100vh;
+        }
+        #colourbox{
+            width:50vw;
+            height: 20vh;
+            background-color: green;
+        }
+    </style>
+    <script type="text/javascript">
+        function autoRefresh() {
+            window.location = window.location.href;
+        }
+        setInterval('autoRefresh()', 2000);
+        function chgColor()
+        {
+            var udata = {{data}};
+            if (udata == 0) {
+                colourbox.style.background = '808080';
+                document.getElementById("h3").innerHTML = "Bus not Started";
+            }
+            else if (udata >= 40) {
+                colourbox.style.background = '#00FF00';
+                document.getElementById("h3").innerHTML = udata + "  Seats available";
+            }
+            else if (udata >= 20 && udata < 40)
+            {
+                colourbox.style.background = '#FFA500';
+                document.getElementById("h3").innerHTML = "Available place in Standing";
+            }  
+            else
+            {
+                colourbox.style.background = '#FF0000';
+                document.getElementById("h3").innerHTML = "Sorry! No Space available";
+            }
+        }
+        
+    </script>
+</head>
+<body onload="chgColor()">
+    <div id="box">
+        <h1>VEHICLE SEAT MONITORING SYSTEM</h1>
+        <h2>Available Seats : {{data}}</h2>
+        <div id="colourbox">
+        </div>
+        <h3 id="h3"></h3>
+    </div>
+</body>
+</html>
